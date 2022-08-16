@@ -10,5 +10,5 @@ def isprime(n):
 
 for case in range(int(input())):
     num = '{0:0>3}'.format(input())
-    num1, num2 = int(num[:3]), int(num[-1:-4:-1])
+    num1, num2 = int(num[:3]), int(num[-1:-4:-1][::-1])
     print('YES' if isprime(num1) and isprime(num2) else 'NO')
