@@ -14,6 +14,6 @@ for case in range(int(input())):
     for i in range(0, len(num), base):
         e = 0
         for j in range(i, i+base):
-            e += int(num[j])*pow[j-i]
-        res += BASE[e]
+            e += BASE[int(num[j])*pow[j-i]]
+        res += str(e)
     print(res)
