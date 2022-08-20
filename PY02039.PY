@@ -11,4 +11,3 @@ k = int(input())
 num = abs(sum_up - sum_down)
 print('YES' if num <= k else 'NO')
 print(num)
-        
