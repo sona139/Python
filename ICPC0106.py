@@ -9,7 +9,6 @@ for case in range(int(input())):
     for i in range(1, base):
         pow = [pow[0]*2] + pow
     res = ''
-    print(num)
     for i in range(0, len(num), base):
         e = 0
         for j in range(i, i+base):
