@@ -7,11 +7,12 @@ def deff(s):
     return s + s[::-1] + ' '
 
 for case in range(int(input())):
-    num = input()
-    num = int(num[:(len(num)+1)//2])
+    num = int(input())
     i = 1
-    while i < num:
+    while True:
         s = str(i)
+        if int(s + s[::-1]) >= num:
+            break
         i += 1
         print(deff(s), end='')
     print()
