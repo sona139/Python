@@ -27,4 +27,4 @@ for case in range(int(input())):
         i += 6
     if num > 1:
         deff(num)
-    print(' + '.join(res))
+    print(' * '.join(res))
