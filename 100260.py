@@ -62,7 +62,7 @@ class Aquatic(Animal):
         super().run_away_from(other)
         
 class Terrestrial(Animal):
-    def __init__(self, name, vegetarina, speak_sound):
+    def __init__(self, name, vegetarina, speak_sound = None):
         super().__init__(name, vegetarina)
         self.speak_sound = speak_sound
         
@@ -100,26 +100,31 @@ class Human(Animal):
     def pet(self, other):
         print(f'{self.name} pet {other.name}')
         
-str, n = '', 0
+n = 0
 animals = []
 while(True):
-    str = input().split()
+    str = input()
     try:
-        n = int(str[0])
+        n = int(str)
         break
     except:
-        if str[0] == "Human":
-            animals += [Human(str[1], str[2])]
+        str = str.split()
+        if str[0] == 'Amphibians':
+            dosomething = f'animals += [{str[0]}("{str[1]}", {str[2]}, {str[3]}, "{str[4]}")]'
+        elif str[0] == 'Human':
+            dosomething = f'animals += [{str[0]}("{str[1]}", {str[2]})]'
+        elif str[0] == 'Terrestrial':
+            dosomething = f'animals += [{str[0]}("{str[1]}", {str[2]}, "{str[3]}")]'
         else:
-            dosomething = f'animals += [{str[0]}("{str[1]}", {str[2]}, {str[3]}, {str[4]})]'
-            exec(dosomething)
+            dosomething = f'animals += [{str[0]}("{str[1]}", {str[2]}, {str[3]})]'
+        exec(dosomething)
             
 for i in range(n):
     names = input().split()
     for i in range(len(animals)):
-        if animals[i].name == names[0]:
+        if isinstance(animals[i], Human) and animals[i].name == names[0]:
             animals[i].friends += [names[1]]
-        elif animals[i].name == names[1]:
+        elif isinstance(animals[i], Human) and animals[i].name == names[1]:
            	animals[i].friends += [names[0]]
 while True:
     try:
