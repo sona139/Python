@@ -19,15 +19,16 @@ class Matrix:
                 res += str(self.mt[i][j]) + ' '
             res += '\n'
         return res
-    
-for case in range(int(input())):
-    n, m = [int(i) for i in input().split()]
-    ip = []
-    for i in range(n):
-        ip += [[int(j) for j in input().split()]]
-    mt = numpy.zeros((n, m), dtype=int)
-    for i in range(n):
-        for j in range(m):
-            mt[i][j] = int(ip[i][j])
-    mt = Matrix(n, m, mt)
-    print(mt*mt.transpose())
+
+if __name__ == '__main__':    
+	for case in range(int(input())):
+		n, m = [int(i) for i in input().split()]
+		ip = []
+		for i in range(n):
+			ip += [[int(j) for j in input().split()]]
+		mt = numpy.zeros((n, m), dtype=int)
+		for i in range(n):
+			for j in range(m):
+				mt[i][j] = int(ip[i][j])
+		mt = Matrix(n, m, mt)
+		print(mt*mt.transpose())
