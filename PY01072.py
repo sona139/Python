@@ -1,5 +1,5 @@
 n, k = [int(i) for i in input().split()]
-list = list({int(i) for i in input().split()})
+list = sorted(list({int(i) for i in input().split()}))
 n = len(list)
 
 def deff(i, l):
