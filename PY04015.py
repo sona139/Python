@@ -9,19 +9,15 @@ class Receipt:
     def calculate(self):
         self.total = self.new_parameter - self.old_parameter
         self.price = 0
-        if self.total > 50:
-            self.price += 50*100
-            if self.total > 100:
-                self.price += 50*150
-                self.price += (self.total-100)*200
-            else:
-                self.price += (self.total-50)*150
-        else: self.price += self.total*100
         if self.total <= 50:
-            self.price *= 1.02
+            self.price += self.total*102
         elif self.total <= 100:
+            self.price += 50*100 + (self.total-50)*150
             self.price *= 1.03
-        else: self.price *= 1.05
+        else:
+            self.price += 50*100 + 50*150 + (self.total-100)*200
+            self.price *= 1.05
+        self.price = round(self.price)
             
     def __str__(self):
         return self.id + ' ' + self.name + ' ' + str(int(self.price))
