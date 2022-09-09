@@ -30,7 +30,7 @@ bonus = [
 	[1, 8, 8, 8, 9, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 13]
 ]
 
-departmetns = [Department(input().split()) for _ in range(int(input()))]
+departments = [Department(input().split()) for _ in range(int(input()))]
 employees = [Employee(input(), input(), input(), input()) for _ in range(int(input()))]
 
 print(*employees, sep='\n')
