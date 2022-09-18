@@ -21,8 +21,8 @@ class Staff:
         else: self.status = 'XUAT SAC'
         
     def __str__(self):
-        return '{} {} {} {}'.format(self.id, self.name, '{:.2f}'.format(self.score+0.001), self.status)
+        return '{} {} {:.2f} {}'.format(self.id, self.name, self.score, self.status)
     
-staffs = [Staff('TS{0:0>2}'.format(i+1), input(), float(input()), float(input())) for i in range(int(input()))]
+staffs = [Staff('TS0{}'.format(i+1), input(), float(input()), float(input())) for i in range(int(input()))]
 staffs.sort(key=lambda ele: -ele.score)
 print(*staffs, sep='\n')
