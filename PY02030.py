@@ -9,9 +9,9 @@ def isprime(n):
             return False
     return True
 
-def solve(l, n):
+def solve(l):
     sl, sr = 0, sum(l)
-    for i in range(n):
+    for i in range(len(l)):
         sl += l[i]
         sr -= l[i]
         if isprime(sl) and isprime(sr):
@@ -20,5 +20,4 @@ def solve(l, n):
         
 n = int(input())
 l = list({int(i):None for i in input().split()})
-print(l)
-print(solve(l, n))
+print(solve(l))
