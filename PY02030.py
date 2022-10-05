@@ -17,7 +17,8 @@ def solve(l):
         if isprime(sl) and isprime(sr):
             return i
     return 'NOT FOUND'
-        
+
 n = int(input())
 l = list({int(i):None for i in input().split()})
+
 print(solve(l))
