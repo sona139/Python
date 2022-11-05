@@ -5,10 +5,10 @@ double_str = [i+i for i in str]
 def solve(s):
     cnt = 0
     for i in double_str:
-        index = i.index(s)
-        if index == -1:
+        try:
+            cnt += i.index(s)
+        except ValueError:
             return 9999999
-        cnt += index
     return cnt
 
 res = 9999999
